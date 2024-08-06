@@ -14,7 +14,7 @@ function AddUser() {
 	const handleSubmit = async e => {
 		e.preventDefault();
 		try {
-			await axios.post('http://localhost:4000/api/users/add', user);
+			await axios.post(`${import.meta.env.VITE_BACKEND_URL}/api/users/add`, user);
 			alert('User added successfully');
 			navigate('/profile');
 			setUser({ name: '', email: '', age: '' });

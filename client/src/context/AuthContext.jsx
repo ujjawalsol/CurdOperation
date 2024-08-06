@@ -14,7 +14,7 @@ export const AuthProvider = ({ children }) => {
 		if (token) {
 			axios.defaults.headers.common['Authorization'] = `Bearer ${token}`;
 			axios
-				.get('http://localhost:4000/api/auth/profile')
+				.get(`${import.meta.env.VITE_BACKEND_URL}/api/auth/profile`)
 				.then(response => {
 					setUser(response.data);
 					setLoading(false);
@@ -29,7 +29,10 @@ export const AuthProvider = ({ children }) => {
 	}, []);
 
 	const login = async (email, password) => {
-		const response = await axios.post('http://localhost:4000/api/auth/login', { email, password });
+		const response = await axios.post(`${import.meta.env.VITE_BACKEND_URL}/api/auth/login`, {
+			email,
+			password,
+		});
 		const { token, user } = response.data;
 		localStorage.setItem('token', token);
 		axios.defaults.headers.common['Authorization'] = `Bearer ${token}`;
@@ -38,7 +41,7 @@ export const AuthProvider = ({ children }) => {
 	};
 
 	const register = async (firstname, lastname, email, password) => {
-		await axios.post('http://localhost:4000/api/auth/register', {
+		await axios.post(`${import.meta.env.VITE_BACKEND_URL}/api/auth/register`, {
 			firstname,
 			lastname,
 			email,

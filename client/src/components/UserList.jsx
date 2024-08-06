@@ -12,7 +12,7 @@ function UserList() {
 	useEffect(() => {
 		const fetchUsers = async () => {
 			try {
-				const response = await axios.get('http://localhost:4000/api/users', {
+				const response = await axios.get(`${import.meta.env.VITE_BACKEND_URL}/api/users`, {
 					params: { name: searchTerm, page: currentPage },
 				});
 				setUsers(response.data.users);
@@ -27,7 +27,7 @@ function UserList() {
 
 	const handleDelete = async id => {
 		try {
-			await axios.delete(`http://localhost:4000/api/users/delete/${id}`);
+			await axios.delete(`${import.meta.env.VITE_BACKEND_URL}/api/users/delete/${id}`);
 			setUsers(users.filter(user => user._id !== id));
 		} catch (error) {
 			console.error('There was an error deleting the user!', error);

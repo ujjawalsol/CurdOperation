@@ -16,7 +16,7 @@ connectDB();
 app.use(bodyParser.json());
 app.use(
 	cors({
-		origin: 'http://localhost:5173', // or the port your frontend is running on
+		origin: `${process.env.FRONT_URL}`, // or the port your frontend is running on
 		credentials: true,
 	})
 );

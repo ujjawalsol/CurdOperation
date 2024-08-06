@@ -21,7 +21,9 @@ function ResetPassword() {
 		}
 
 		try {
-			const response = await axios.post(`http://localhost:4000/api/auth/reset-password/${token}`, { password });
+			const response = await axios.post(`${import.meta.env.VITE_BACKEND_URL}/api/auth/reset-password/${token}`, {
+				password,
+			});
 			setMessage(response.data.message || 'Password reset successfully');
 			navigate('/login');
 		} catch (error) {

@@ -18,7 +18,7 @@ services:
     container_name: node-api
     restart: always
     ports:
-      - "4000:4000"
+      - "2000:2000"
     depends_on:
       - database
     networks:
@@ -28,7 +28,7 @@ services:
     image: mongo
     container_name: mongo-db
     ports:
-      - "27017:27017"
+      - "27018:27018"
     networks:
       - mern-curd
    

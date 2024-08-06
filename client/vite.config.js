@@ -9,7 +9,7 @@ export default defineConfig({
 	server: {
 		host: true,
 		StrictPort: true,
-		port: 5000,
+		port: 5173,
 	},
 	factory: 'React.createElement',
 	fragment: 'React.Fragment',
