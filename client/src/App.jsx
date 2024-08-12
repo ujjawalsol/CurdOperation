@@ -14,52 +14,52 @@ import ForgotPassword from './components/ForgotPassword/Forgot';
 import ResetPassword from './components/ResetPassword/Reset';
 
 function App() {
-    return (
-        <BrowserRouter>
-            <AuthProvider>
-                <Navbar />
-                <Routes>
-                    <Route path="/" element={<Landing />} />
-                    <Route path="/signup" element={<Signup />} />
-                    <Route path="/login" element={<Login />} />
-                    <Route path="/forgot-password" element={<ForgotPassword />} />
-                    <Route path="/reset-password/:token" element={<ResetPassword />} />
-                    <Route
-                        path="/profile"
-                        element={
-                            <PrivateRoute>
-                                <UserList />
-                            </PrivateRoute>
-                        }
-                    />
-                    <Route
-                        path="/add"
-                        element={
-                            <PrivateRoute>
-                                <AddUser />
-                            </PrivateRoute>
-                        }
-                    />
-                    <Route
-                        path="/edit/:id"
-                        element={
-                            <PrivateRoute>
-                                <EditUser />
-                            </PrivateRoute>
-                        }
-                    />
-                    <Route
-                        path="/delete/:id"
-                        element={
-                            <PrivateRoute>
-                                <DeleteUser />
-                            </PrivateRoute>
-                        }
-                    />
-                </Routes>
-            </AuthProvider>
-        </BrowserRouter>
-    );
+	return (
+		<BrowserRouter>
+			<AuthProvider>
+				<Navbar />
+				<Routes>
+					<Route path="/" element={<Landing />} />
+					<Route path="/signup" element={<Signup />} />
+					<Route path="/login" element={<Login />} />
+					<Route path="/forgot-password" element={<ForgotPassword />} />
+					<Route path="/reset-password/:token" element={<ResetPassword />} />
+					<Route
+						path="/profile"
+						element={
+							<PrivateRoute>
+								<UserList />
+							</PrivateRoute>
+						}
+					/>
+					<Route
+						path="/add"
+						element={
+							<PrivateRoute>
+								<AddUser />
+							</PrivateRoute>
+						}
+					/>
+					<Route
+						path="/edit/:id"
+						element={
+							<PrivateRoute>
+								<EditUser />
+							</PrivateRoute>
+						}
+					/>
+					<Route
+						path="/delete/:id"
+						element={
+							<PrivateRoute>
+								<DeleteUser />
+							</PrivateRoute>
+						}
+					/>
+				</Routes>
+			</AuthProvider>
+		</BrowserRouter>
+	);
 }
 
 export default App;
