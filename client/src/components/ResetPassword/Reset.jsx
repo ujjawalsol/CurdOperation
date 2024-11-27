@@ -34,7 +34,7 @@ function ResetPassword() {
 
 	return (
 		<div className="min-h-screen flex items-center justify-center bg-gray-100">
-			<div className="bg-white p-8 rounded-lg shadow-lg w-full max-w-md">
+			<div className="bg-white p-8 rounded-lg shadow-lg w-[90%] max-w-md">
 				<h2 className="text-2xl font-bold mb-4 text-center text-blue-500">Reset Password</h2>
 				{message && <p className="mb-4 text-center text-green-500">{message}</p>}
 				{error && <p className="mb-4 text-center text-red-500">{error}</p>}

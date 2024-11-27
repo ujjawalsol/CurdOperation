@@ -6,7 +6,7 @@ function Navbar() {
 	const { user, logout } = useContext(AuthContext);
 
 	return (
-		<nav className="bg-blue-500 p-4 text-white">
+		<nav className="bg-[#08162E] p-4 text-white">
 			<div className="max-w-full mx-auto flex justify-between items-center">
 				{/* Logo Section */}
 				<Link to="/" className="flex items-center">
@@ -24,10 +24,10 @@ function Navbar() {
 						</>
 					) : (
 						<>
-							<Link to="/signup" className="bg-white text-blue-600 px-3 py-2 rounded hover:bg-gray-200">
+							<Link style={{ fontWeight: '20px' }} to="/signup" className="bg-white text-gray-600 px-3 py-2 rounded hover:bg-gray-200">
 								Sign Up
 							</Link>
-							<Link to="/login" className="bg-white text-blue-600 px-3 py-2 rounded hover:bg-gray-200">
+							<Link style={{ fontWeight: '20px' }} to="/login" className="bg-white text-gray-600 px-3 py-2 rounded hover:bg-gray-200">
 								Sign In
 							</Link>
 						</>
